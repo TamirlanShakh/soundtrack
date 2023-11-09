@@ -1,0 +1,436 @@
+@charset "UTF-8";
+body {
+  font-family: "Poppins", sans-serif;
+  height: 3000px;
+}
+
+.header {
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  background: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.header__container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  gap: 70px;
+}
+
+.logo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.logo__img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background: #121212;
+  color: #fff;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: #21383e;
+}
+
+.auth {
+  display: flex;
+  height: 100%;
+}
+.auth__link {
+  display: flex;
+  align-items: center;
+  padding: 0 60px;
+  text-decoration: none;
+  color: #553c16;
+}
+.auth__link:last-child {
+  border-bottom-left-radius: 50px;
+  background-color: #f5f2ec;
+}
+
+/* ------- email --------- */
+.email-register {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 682px;
+  width: 100%;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  padding: 28px 28px 28px 40px;
+  margin: 0 auto;
+  bottom: -100px;
+  left: 20px;
+  z-index: 1;
+}
+
+.email-register__title {
+  margin-bottom: 10px;
+  color: #7d8186;
+  font-size: 13px;
+}
+
+.email-register__field {
+  font-weight: 500;
+  font-size: 23px;
+  color: #000;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 22px 64px;
+  border-radius: 10px;
+  background-color: #725ba1;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button::after {
+  content: "";
+  background-size: cover;
+  height: 20px;
+  width: 20px;
+  transition: 0.15s;
+}
+
+.button:hover {
+  background-color: #8067b3;
+}
+
+.button:active {
+  background-color: #624e8b;
+  transform: scale(0.95);
+  box-shadow: 0 0 10px #656464; /* Добавление тени при активации */
+}
+
+.button:hover::after {
+  transform: translateX(3px);
+}
+
+.email-register__button::after {
+  background-image: url(../images/headphone.png);
+}
+
+.connect {
+  margin-top: 100px;
+}
+.connect__container {
+  display: flex;
+  position: relative;
+  align-items: center;
+  gap: 50px;
+}
+.connect__content {
+  max-width: 520px;
+}
+.connect__title {
+  font-size: 60px;
+  font-weight: 400;
+  margin-bottom: 34px;
+}
+.connect__text {
+  font-size: 14px;
+  line-height: 26px;
+}
+.connect__img {
+  background-image: url("../images/girl_1.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: 390px;
+  height: 390px;
+  width: 100%;
+  margin-right: 328px;
+}
+.connect__sub {
+  display: flex;
+  justify-content: space-between;
+}
+.connect__nigga {
+  background-image: url("../images/girl_nigga.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: 502px;
+  height: 502px;
+  width: 100%;
+}
+.connect__china {
+  background-image: url("../images/girl_china.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: 328px;
+  height: 328px;
+  width: 100%;
+}
+
+.hamburger {
+  display: none;
+}
+.hamburger__box {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 2.5rem;
+  width: 2.5rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+.hamburger__line {
+  height: 5px;
+  background: black;
+  border-radius: 5px;
+  margin: 3px 0px;
+  transform-origin: left;
+  transition: all 0.5s;
+}
+.hamburger__menu {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: 300px;
+  height: auto;
+  background-color: #fff;
+  transform: translateX(-320px);
+  transition: 0.3s;
+  left: 0;
+  top: 0;
+  box-shadow: 0 0 10px #000;
+  padding-top: 80px;
+}
+.hamburger__link {
+  padding: 30px 10px;
+}
+.hamburger__link:hover {
+  background-color: #e8e7e7;
+}
+.hamburger__checkbox:checked ~ .hamburger__box .hamburger__line:first-child {
+  transform: rotate(45deg);
+}
+.hamburger__checkbox:checked ~ .hamburger__box .hamburger__line:nth-child(2) {
+  opacity: 0;
+}
+.hamburger__checkbox:checked ~ .hamburger__box .hamburger__line:last-child {
+  transform: rotate(-45deg);
+}
+.hamburger__checkbox:checked ~ .hamburger__menu {
+  transform: translateX(0px);
+}
+
+.chat__container {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+.chat__info {
+  width: 440px;
+  padding-top: 160px;
+}
+.chat__info hr {
+  width: 120px;
+  color: #dedede;
+  margin: 50px 0px;
+}
+.chat__info-title {
+  font-size: 50px;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  line-height: 62px;
+}
+.chat__info-desc {
+  display: flex;
+  flex-direction: column;
+}
+.chat__info-desc-text {
+  font-size: 14px;
+  font-weight: 400;
+  color: #404852;
+  line-height: 26px;
+  margin-bottom: 30px;
+}
+.chat__info-desc-person {
+  display: flex;
+}
+.chat__info-desc-person img {
+  width: 48px;
+  height: 48px;
+  margin-right: 16px;
+}
+.chat__info-desc-person-text {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.chat__info-desc-person-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: #273240;
+}
+.chat__info-desc-person-job {
+  font-size: 12px;
+  font-weight: 400;
+  color: #2c3a4b;
+}
+.chat__images {
+  position: relative;
+  width: 100%;
+  max-width: 696px;
+}
+.chat__images-top {
+  height: 433px;
+  display: flex;
+  justify-content: end;
+}
+.chat__images-top-text {
+  width: 235px;
+  height: 95px;
+  position: absolute;
+  right: 290px;
+  top: 185px;
+  background-color: #7d6353;
+  padding: 14px 30px;
+  border-radius: 10px 10px 0px 10px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+  color: #fff;
+  z-index: 1;
+}
+.chat__images-bottom {
+  height: 433px;
+  display: flex;
+}
+.chat__images-bottom-text1 {
+  height: 50px;
+  position: absolute;
+  left: 265px;
+  bottom: 305px;
+  background-color: #726985;
+  padding: 14px 30px;
+  border-radius: 25px 25px 25px 25px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+  color: #fff;
+  z-index: 1;
+}
+.chat__images-bottom-text2 {
+  height: 50px;
+  position: absolute;
+  left: 265px;
+  bottom: 245px;
+  background-color: #726985;
+  padding: 14px 30px;
+  border-radius: 25px 25px 25px 0px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+  color: #fff;
+  z-index: 1;
+}
+@media screen and (max-width: 1200px) {
+  .header {
+    padding-left: 8px;
+  }
+  .header__container {
+    padding-left: 8px;
+  }
+  .connect__container {
+    padding: 0 8px;
+  }
+  .chat__images {
+    display: none;
+  }
+  .chat__info {
+    width: 100%;
+    max-width: 950px;
+    text-align: center;
+    margin: 0px auto;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .logo__text {
+    display: none;
+  }
+  .nav {
+    gap: 10px;
+  }
+  .nav-list {
+    gap: 20px;
+  }
+  .auth__link {
+    padding: 0px 20px;
+  }
+}
+@media screen and (max-width: 960px) {
+  .chat__info {
+    max-width: 720px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .connect__title {
+    font-style: 40px;
+  }
+  .connect__container {
+    gap: 15px;
+  }
+  .connect__img {
+    display: none;
+  }
+  .connect .email-register {
+    bottom: -140px;
+  }
+  .nav-list {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  .chat__info {
+    max-width: 500px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .chat__info {
+    max-width: 400px;
+  }
+}/*# sourceMappingURL=styles.css.map */
